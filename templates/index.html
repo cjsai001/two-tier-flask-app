@@ -1,143 +1,195 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App new🚀</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Earthy Background */
-body {
-    background: linear-gradient(135deg, #e8dfd1, #d8c3a5, #c6ac8f);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    color: #3e2f23;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-/* Main Container */
-.container {
-    max-width: 620px;
-    width: 100%;
-    padding: 35px;
-    background: rgba(250, 246, 240, 0.92);
-    border: 2px solid #b08968;
-    border-radius: 22px;
-    box-shadow: 0 12px 35px rgba(90, 62, 43, 0.18);
-    transition: all 0.3s ease;
-}
+        body {
+            background: linear-gradient(135deg, #ede0d4, #ddb892, #b08968);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #3d2b1f;
+        }
 
-.container:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(90, 62, 43, 0.25);
-}
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            background: rgba(255, 248, 240, 0.95);
+            border: 2px solid #a98467;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
-/* Heading */
-h1 {
-    text-align: center;
-    color: #6b4226;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
+        .container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+        }
 
-/* Messages Box */
-.messages {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #f4ede4;
-    border: 1px solid #d4b996;
-    border-radius: 14px;
-    max-height: 220px;
-    overflow-y: auto;
-}
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #6f4518;
+            margin-bottom: 20px;
+        }
 
-/* Custom Scrollbar */
-.messages::-webkit-scrollbar {
-    width: 8px;
-}
+        .messages {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f5ebe0;
+            border: 1px solid #d6ccc2;
+            border-radius: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
 
-.messages::-webkit-scrollbar-thumb {
-    background: #b08968;
-    border-radius: 10px;
-}
+        .messages p {
+            padding: 10px 14px;
+            background: #e6ccb2;
+            color: #432818;
+            border-left: 4px solid #7f5539;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            text-align: left;
+        }
 
-.messages p {
-    background: #e7d7c1;
-    color: #4b382a;
-    padding: 12px 14px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    border-left: 5px solid #7f5539;
-    word-wrap: break-word;
-    transition: 0.2s;
-}
+        .messages::-webkit-scrollbar {
+            width: 8px;
+        }
 
-.messages p:hover {
-    transform: translateX(3px);
-}
+        .messages::-webkit-scrollbar-thumb {
+            background: #a98467;
+            border-radius: 10px;
+        }
 
-/* Input Box */
-input[type="text"] {
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #c2a27c;
-    background: #fffdf9;
-    color: #4b382a;
-    border-radius: 12px;
-    font-size: 15px;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #b08968;
+            background: #fffdf9;
+            color: #432818;
+            border-radius: 10px;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
-input[type="text"]::placeholder {
-    color: #8c7158;
-}
+        input[type="text"]::placeholder {
+            color: #8d6e63;
+        }
 
-input[type="text"]:focus {
-    outline: none;
-    border-color: #7f5539;
-    box-shadow: 0 0 10px rgba(127, 85, 57, 0.2);
-}
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #7f5539;
+            box-shadow: 0 0 10px rgba(127, 85, 57, 0.2);
+        }
 
-/* Submit Button */
-input[type="submit"] {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #7f5539, #a47148);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            background: linear-gradient(135deg, #7f5539, #9c6644);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-input[type="submit"]:hover {
-    background: linear-gradient(135deg, #6f4518, #936639);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(111, 69, 24, 0.25);
-}
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(127, 85, 57, 0.3);
+        }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .container {
-        padding: 22px;
-    }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
 
-    h1 {
-        font-size: 1.6rem;
-    }
+            h1 {
+                font-size: 1.6rem;
+            }
 
-    input[type="text"],
-    input[type="submit"] {
-        font-size: 14px;
-    }
-}
+            input[type="text"],
+            input[type="submit"] {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Flask + MySQL App [sai's 🔥 2 tier] </h1>
+
+        <div class="messages">
+            {% for message in messages %}
+                <p>{{ message[0] }}</p>
+            {% endfor %}
+        </div>
+
+        <form id="messageForm">
+            <input type="text" name="new_message" placeholder="Type your message..." required>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <!-- jQuery for Smooth AJAX Requests -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#messageForm").on("submit", function(event) {
+                event.preventDefault();
+
+                let messageInput = $("input[name='new_message']");
+                let message = messageInput.val().trim();
+
+                if (message === "") {
+                    alert("Message cannot be empty!");
+                    return;
+                }
+
+                $.ajax({
+                    url: "/submit",
+                    type: "POST",
+                    data: { new_message: message },
+                    success: function(response) {
+                        if (response && response.message) {
+                            $(".messages").append("<p>" + response.message + "</p>");
+                            messageInput.val("");
+                        } else {
+                            console.error("Unexpected response format:", response);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX Error:", status, error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
+```
+
