@@ -1,184 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App new🚀</title>
-    <style>
-        /* Import Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        /* Reset Default Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+/* Earthy Background */
+body {
+    background: linear-gradient(135deg, #e8dfd1, #d8c3a5, #c6ac8f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #3e2f23;
+}
 
-        /* Background with subtle gradient */
-        body {
-            background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+/* Main Container */
+.container {
+    max-width: 620px;
+    width: 100%;
+    padding: 35px;
+    background: rgba(250, 246, 240, 0.92);
+    border: 2px solid #b08968;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(90, 62, 43, 0.18);
+    transition: all 0.3s ease;
+}
 
-        /* Glassmorphic Container */
-        .container {
-            max-width: 600px;
-            width: 100%;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(90, 62, 43, 0.25);
+}
 
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1);
-        }
+/* Heading */
+h1 {
+    text-align: center;
+    color: #6b4226;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
 
-        /* Elegant Heading */
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #ff9800, #e65100);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
+/* Messages Box */
+.messages {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f4ede4;
+    border: 1px solid #d4b996;
+    border-radius: 14px;
+    max-height: 220px;
+    overflow-y: auto;
+}
 
-        /* Messages Box */
-        .messages {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
+/* Custom Scrollbar */
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
 
-        .messages p {
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            margin-bottom: 5px;
-            font-size: 0.95rem;
-        }
+.messages::-webkit-scrollbar-thumb {
+    background: #b08968;
+    border-radius: 10px;
+}
 
-        /* Animated Input Fields */
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
+.messages p {
+    background: #e7d7c1;
+    color: #4b382a;
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #7f5539;
+    word-wrap: break-word;
+    transition: 0.2s;
+}
 
-        input[type="text"]:focus {
-            border-color: #ff9800;
-            box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
-            outline: none;
-        }
+.messages p:hover {
+    transform: translateX(3px);
+}
 
-        /* Glowing Submit Button */
-        input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #ff9800, #e65100);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
+/* Input Box */
+input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #c2a27c;
+    background: #fffdf9;
+    color: #4b382a;
+    border-radius: 12px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
 
-        input[type="submit"]:hover {
-            box-shadow: 0 0 20px rgba(255, 152, 0, 0.6);
-            transform: translateY(-2px);
-        }
+input[type="text"]::placeholder {
+    color: #8c7158;
+}
 
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
+input[type="text"]:focus {
+    outline: none;
+    border-color: #7f5539;
+    box-shadow: 0 0 10px rgba(127, 85, 57, 0.2);
+}
 
-            h1 {
-                font-size: 1.6rem;
-            }
+/* Submit Button */
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7f5539, #a47148);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
 
-            input[type="text"], input[type="submit"] {
-                font-size: 14px;
-            }
-        }
-    </style>
-</head>
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #6f4518, #936639);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(111, 69, 24, 0.25);
+}
 
-<body>
-    <div class="container">
-        <h1>Flask + MySQL App [sai's 🔥 2 tier] </h1>
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 22px;
+    }
 
-        <div class="messages">
-            {% for message in messages %}
-                <p>{{ message[0] }}</p>
-            {% endfor %}
-        </div>
+    h1 {
+        font-size: 1.6rem;
+    }
 
-        <form id="messageForm">
-            <input type="text" name="new_message" placeholder="Type your message..." required>
-            <input type="submit" value="Send">
-        </form>
-    </div>
-
-    <!-- jQuery for Smooth AJAX Requests -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#messageForm").on("submit", function(event) {
-                event.preventDefault(); // Prevent page reload
-
-                let messageInput = $("input[name='new_message']");
-                let message = messageInput.val().trim();
-
-                if (message === "") {
-                    alert("Message cannot be empty!");
-                    return;
-                }
-
-                $.ajax({
-                    url: "/submit",
-                    type: "POST",
-                    data: { new_message: message },
-                    success: function(response) {
-                        if (response && response.message) {
-                            $(".messages").append("<p>" + response.message + "</p>");
-                            messageInput.val("");
-                        } else {
-                            console.error("Unexpected response format:", response);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("AJAX Error:", status, error);
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-
-</html>
+    input[type="text"],
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}
