@@ -40,4 +40,20 @@ pipeline{
             }
         }
     }
+post {
+    success {
+        emailtext(
+        Subject: "Build Successful",
+        body: "good News: your build was successful!",
+        to: 'chilamakurijayasimhasai@gmailcom
+        )
+    }
+    failure {
+        emailtext(
+        subject: "Build Failed",
+        body: "Bad News: Your build Failed!",
+        to: 'chilamakurijayasimhasai@gmail.com'
+        )
+     }
+   }
 }
