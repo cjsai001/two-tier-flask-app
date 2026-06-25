@@ -71,8 +71,3 @@ def docker_push(String credId, String imageName) {
         sh "docker push \$dockerHubUser/${imageName}:latest"
     }
 }
-
-// FIXED: Removed the space between the dash and the 'o' flag
-def trivy_fs() {
-    sh "trivy fs . -o results.json"
-}
