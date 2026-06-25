@@ -59,7 +59,6 @@ pipeline {
     }
 }
 
-// Fixed function parameters for safety and credential masking
 def docker_push(String credId, String imageName) {
     withCredentials([usernamePassword(
         credentialsId: "${credId}",
