@@ -6,8 +6,9 @@ pipeline{
     stages{
         stage("Code Clone"){
             steps{
-                scripts{
-                    clone("
+                script{
+                    clone("https://github.com/cjsai001/two-tier-flask-app.git", "main")
+                }
             }
         }
         stage("Trivy File System Scanning"){
