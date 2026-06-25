@@ -8,7 +8,7 @@ pipeline{
                 git url: "https://github.com/cjsai001/two-tier-flask-app", branch: "main"
             }
         }
-        stage("Trivy File System Scan"){
+        stage("Trivy File System Scanning"){
             steps{
                 sh 'trivy fs . -o results.json'
             }
